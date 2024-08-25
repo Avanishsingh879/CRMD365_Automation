@@ -42,7 +42,7 @@ public class Analytics_TestScript {
 		driver.manage().window().maximize();
 		driver.get(files.getProperty("Url"));
 		System.out.println("Browser Launch done");
-		System.out.println("Login Test sucessfully1");
+		System.out.println("Login Test sucessfully12344");
 		Thread.sleep(2000);	 
 	}
 
