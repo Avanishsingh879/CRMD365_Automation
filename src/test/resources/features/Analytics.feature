@@ -16,5 +16,21 @@ Feature: Validating Analytics page
     Then User Login Sucessfully
     And User verify Home Page Functionlity
     And User verify Report Page Functionlity
+   
+ @Rrgression @Analytics_03 @Tc_003   
+ Scenario Outline: verify the Analyics Page
+  
+  Given I navigate to Application open Url
+  When User eneter username and password by click on Sign In Page
+  Then User Login Sucessfully
+  And User verify Home Page Functionlity
+  And User verify Report Page Functionlity
+  And User verify and Create Report"<ReportName>","<Description>" in Report Page Functionlity
+  
+  Examples:
+  
+  |ReportName|Description|
+  |Test1     |    Testing|
+  
     
      

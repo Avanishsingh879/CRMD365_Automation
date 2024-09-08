@@ -1,6 +1,0 @@
-file:src/test/resources/features/Analytics.feature:13
-file:src/test/resources/features/Sales.feature:18
-file:src/test/resources/features/Tools.feature:13
-file:src/test/resources/features/Marketing.feature:13
-file:src/test/resources/features/Inventory.feature:24
-file:src/test/resources/features/Support.feature:15

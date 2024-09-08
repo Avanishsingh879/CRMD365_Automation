@@ -30,8 +30,8 @@ public class Analytics_TestScript {
 	public static WebDriver driver;
 	public static Properties files;
 	
-	@Given("I navigate to APPlication open UrL")
-	public void i_navigate_to_APPlication_open_UrL() throws IOException, InterruptedException {
+	@Given("I navigate to Application open Url")
+	public void i_navigate_to_Application_open_Url() throws IOException, InterruptedException {
 		
 		FileInputStream fis=new FileInputStream("Config.properties");
 		files=new Properties();
@@ -89,11 +89,68 @@ public class Analytics_TestScript {
 	@Then("User verify Report Page Functionlity")
 	public void user_verify_Report_Page_Functionlity() throws InterruptedException {
 	    
+		WebElement GetText=driver.findElement(By.xpath("//table[@class='hdrTabBg']/tbody/tr/td[2]//a[text()='Analytics']"));
+		String txt=GetText.getText();
+		System.out.println(txt);
+		Thread.sleep(1000);
+		
+	}
+	
+	@Then("User verify and Create Report{string},{string} in Report Page Functionlity")
+	public void user_verify_and_Create_Report_in_Report_Page_Functionlity(String ReportName, String Description) throws InterruptedException, IOException {
+	   
 		WebElement MouseHover=driver.findElement(By.xpath("//table[@class='hdrTabBg']/tbody/tr/td[2]//a[text()='Analytics']"));
 		Actions act=new Actions(driver);
 		act.moveToElement(MouseHover).build().perform();
 		driver.findElement(By.xpath("//div[@id='Analytics_sub']/table/tbody/tr/td//a[text()='Reports']")).click();
 		Thread.sleep(2000);
+		//////////////////////////////////////////////////////
+		
+		WebElement report=driver.findElement(By.xpath("//img[@title='Create Report...']"));
+		report.click();
+		driver.findElement(By.xpath("//div[@id='reportLay']/table/tbody/tr[2]//a[text()='- Leads']")).click();
+		Thread.sleep(1000);
+		
+		/////Handle Multiple Window/////
+		
+		String mainwindow=driver.getWindowHandle();
+		System.out.println(mainwindow);
+		Set<String>set=driver.getWindowHandles();
+		Iterator<String>itr=set.iterator();
+		
+		while(itr.hasNext()==true) {
+			
+			String Childwindow=itr.next();
+			System.out.println(Childwindow);
+			String Title=driver.switchTo().window(Childwindow).getTitle();
+			
+			if(Title.equals("vtiger CRM - Create Report")) {
+				
+				break;
+			}	
+		}
+		
+		driver.manage().window().maximize();
+		
+		Thread.sleep(1000);
+		 WebElement repName=driver.findElement(By.xpath("//input[@name='reportname']"));
+		 repName.sendKeys(ReportName);
+		 Thread.sleep(1000);
+		 WebElement repdes=driver.findElement(By.xpath("//textarea[@name='reportdes']"));
+		 repdes.sendKeys(Description);
+		 Thread.sleep(1000);
+		 WebElement NxtBtn=driver.findElement(By.xpath("//input[@name='next']"));
+		 
+		 if(NxtBtn.isEnabled()) {
+			 
+			 NxtBtn.click();
+		 }
+		
+		 Thread.sleep(1000);
+		 
+		 File srcc=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		 FileUtils.copyFile(srcc, new File("./Screenshots/report.png"));
+		 
 	}
 
 }
