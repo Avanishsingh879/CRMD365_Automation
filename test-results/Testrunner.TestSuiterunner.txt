@@ -1,4 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: Testrunner.TestSuiterunner
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 24.915 s - in Testrunner.TestSuiterunner
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 49.761 s <<< FAILURE! - in Testrunner.TestSuiterunner
+runScenario(Testrunner.TestSuiterunner)  Time elapsed: 48.737 s  <<< FAILURE!
+cucumber.runtime.CucumberException: There are undefined steps
+

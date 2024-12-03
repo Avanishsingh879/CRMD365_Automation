@@ -22,6 +22,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 import Generic_Method.Utility_Method;
+import PageObject.Leads_Page;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -35,6 +36,7 @@ public class Sales_TestScript extends Utility_Method{
 	//public SalesProcess_PageObject salesobj=new SalesProcess_PageObject();
 	//SalesProcess_PageObject salesobj=new SalesProcess_PageObject();
 	
+	Leads_Page Leadss=new Leads_Page(driver);
 
 	@Given("I navigate to application open URl")
 	public void i_navigate_to_application_open_URl() throws InterruptedException, IOException {
@@ -42,7 +44,7 @@ public class Sales_TestScript extends Utility_Method{
 		FileInputStream fis=new FileInputStream("Config.properties");
 		file=new Properties();
 		file.load(fis);
-		System.setProperty("webdriver.chrome.driver", "Drivers\\chromedriver_114.exe");
+		System.setProperty("webdriver.chrome.driver", "Drivers\\chromedriver_130.exe");
 		driver=new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
@@ -121,10 +123,12 @@ public class Sales_TestScript extends Utility_Method{
 	public void user_has_click_on_Leads_tab() throws InterruptedException {
 		
 		Thread.sleep(2000);
-		WebElement Leads_clk=driver.findElement(By.linkText("Leads"));
-		Utility_Method.highLightElement(driver, Leads_clk);
+		//WebElement Leads_clk=driver.findElement(By.linkText("Leads"));
+		//Utility_Method.highLightElement(driver, Leads_clk);
 		Thread.sleep(2000);
-		Leads_clk.click();
+		Leadss.Leads(driver);
+		
+		//Leads_clk.click();
 		Thread.sleep(2000);
 		Utility_Method.captureScreenShot(driver);
 		Thread.sleep(2000);

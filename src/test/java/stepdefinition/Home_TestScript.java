@@ -28,7 +28,7 @@ public class Home_TestScript {
 	FileInputStream fis=new FileInputStream("Config.properties");
 	files=new Properties();
 	files.load(fis);
-	System.setProperty("webdriver.chrome.driver", "Drivers\\chromedriver_119.exe");
+	System.setProperty("webdriver.chrome.driver", "Drivers\\chromedriver_130.exe");
 	driver=new ChromeDriver();
 	driver.get(files.getProperty("Url"));
 	driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
