@@ -36,7 +36,7 @@ public class Analytics_TestScript {
 		FileInputStream fis=new FileInputStream("Config.properties");
 		files=new Properties();
 		files.load(fis);
-		System.setProperty("webdriver.chrome.driver", "Drivers\\chromedriver_127.exe");
+		System.setProperty("webdriver.chrome.driver", "Drivers\\chromedriver_133.exe");
 		driver=new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 		driver.manage().window().maximize();

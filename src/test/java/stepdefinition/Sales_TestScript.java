@@ -44,7 +44,7 @@ public class Sales_TestScript extends Utility_Method{
 		FileInputStream fis=new FileInputStream("Config.properties");
 		file=new Properties();
 		file.load(fis);
-		System.setProperty("webdriver.chrome.driver", "Drivers\\chromedriver_130.exe");
+		System.setProperty("webdriver.chrome.driver", "Drivers\\chromedriver_133.exe");
 		driver=new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 		driver.manage().window().maximize();

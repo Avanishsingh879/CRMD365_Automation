@@ -1,0 +1,344 @@
+# Created at 2024-12-04T18:52:30.907
+TestSet has not finished before stream error has appeared >> initializing exit by non-null configuration: DEFAULT
+java.io.EOFException
+	at java.base/java.io.DataInputStream.readInt(DataInputStream.java:398)
+	at org.apache.maven.surefire.booter.MasterProcessCommand.decode(MasterProcessCommand.java:115)
+	at org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:390)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+
+
+# Created at 2024-12-04T18:52:35.047
+Unexpected IOException: 8,1,Testrunner.TestSuiterunner,runScenario(Testrunner.TestSuiterunner),null,no such window: target window already closed\000Afrom unknown error: web view not found\000A  (Session info: chrome=131.0.6778.108)\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-MVHKLV0'\002C ip: '192.168.1.44'\002C os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '17.0.8'\000ADriver info: org.openqa.selenium.chrome.ChromeDriver\000ACapabilities {acceptInsecureCerts: false\002C browserName: chrome\002C browserVersion: 131.0.6778.108\002C chrome: {chromedriverVersion: 131.0.6778.85 (3d81e41b6f3a...\002C userDataDir: C:\005CUsers\005CAvanish\005CAppData\005CLo...}\002C fedcm:accounts: true\002C goog:chromeOptions: {debuggerAddress: localhost:59149}\002C javascriptEnabled: true\002C networkConnectionEnabled: false\002C pageLoadStrategy: normal\002C platform: WINDOWS\002C platformName: WINDOWS\002C proxy: Proxy()\002C setWindowRect: true\002C strictFileInteractability: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}\002C unhandledPromptBehavior: dismiss and notify\002C webauthn:extension:credBlob: true\002C webauthn:extension:largeBlob: true\002C webauthn:extension:minPinLength: true\002C webauthn:extension:prf: true\002C webauthn:virtualAuthenticators: true}\000ASession ID: e9a3e037fd6a0c502a7f305d1fd32bae\000A*** Element info: {Using=xpath\002C value=//div[@id='Sales_sub']//a[text()='Leads']},null,no such window: target window already closed\000Afrom unknown error: web view not found\000A  (Session info: chrome=131.0.6778.108)\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-MVHKLV0'\002C ip: '192.168.1.44'\002C os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '17.0.8'\000ADriver info: org.openqa.selenium.chrome.ChromeDriver\000ACapabilities {acceptInsecureCerts: false\002C browserName: chrome\002C browserVersion: 131.0.6778.108\002C chrome: {chromedriverVersion: 131.0.6778.85 (3d81e41b6f3a...\002C userDataDir: C:\005CUsers\005CAvanish\005CAppData\005CLo...}\002C fedcm:accounts: true\002C goog:chromeOptions: {debuggerAddress: localhost:59149}\002C javascriptEnabled: true\002C networkConnectionEnabled: false\002C pageLoadStrategy: normal\002C platform: WINDOWS\002C platformName: WINDOWS\002C proxy: Proxy()\002C setWindowRect: true\002C strictFileInteractability: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}\002C unhandledPromptBehavior: dismiss and notify\002C webauthn:extension:credBlob: true\002C webauthn:extension:largeBlob: true\002C webauthn:extension:minPinLength: true\002C webauthn:extension:prf: true\002C webauthn:virtualAuthenticators: true}\000ASession ID: e9a3e037fd6a0c502a7f305d1fd32bae\000A*** Element info: {Using=xpath\002C value=//div[@id='Sales_sub']//a[text()='Leads']},TestSuiterunner.runScenario \00BB NoSuchWindow no such window: target window alrea...,org.openqa.selenium.NoSuchWindowException: \000Ano such window: target window already closed\000Afrom unknown error: web view not found\000A  (Session info: chrome=131.0.6778.108)\000ABuild info: version: '3.141.59'\002C revision: 'e82be7d358'\002C time: '2018-11-14T08:17:03'\000ASystem info: host: 'DESKTOP-MVHKLV0'\002C ip: '192.168.1.44'\002C os.name: 'Windows 11'\002C os.arch: 'amd64'\002C os.version: '10.0'\002C java.version: '17.0.8'\000ADriver info: org.openqa.selenium.chrome.ChromeDriver\000ACapabilities {acceptInsecureCerts: false\002C browserName: chrome\002C browserVersion: 131.0.6778.108\002C chrome: {chromedriverVersion: 131.0.6778.85 (3d81e41b6f3a...\002C userDataDir: C:\005CUsers\005CAvanish\005CAppData\005CLo...}\002C fedcm:accounts: true\002C goog:chromeOptions: {debuggerAddress: localhost:59149}\002C javascriptEnabled: true\002C networkConnectionEnabled: false\002C pageLoadStrategy: normal\002C platform: WINDOWS\002C platformName: WINDOWS\002C proxy: Proxy()\002C setWindowRect: true\002C strictFileInteractability: false\002C timeouts: {implicit: 0\002C pageLoad: 300000\002C script: 30000}\002C unhandledPromptBehavior: dismiss and notify\002C webauthn:extension:credBlob: true\002C webauthn:extension:largeBlob: true\002C webauthn:extension:minPinLength: true\002C webauthn:extension:prf: true\002C webauthn:virtualAuthenticators: true}\000ASession ID: e9a3e037fd6a0c502a7f305d1fd32bae\000A*** Element info: {Using=xpath\002C value=//div[@id='Sales_sub']//a[text()='Leads']}\000A
+
+
+# Created at 2024-12-04T18:52:35.055
+Unexpected IOException with stream: Feature: Validating Sales page
+
+
+# Created at 2024-12-04T18:52:35.056
+Unexpected IOException with stream: 
+
+
+# Created at 2024-12-04T18:52:35.057
+Unexpected IOException with stream:   @Regression @Create_Sales @TC_001
+
+
+# Created at 2024-12-04T18:52:35.058
+Unexpected IOException with stream:   Scenario: verify the Vtiger Login Page                                # src/test/resources/features/Sales.feature:5
+
+
+# Created at 2024-12-04T18:52:35.078
+Unexpected IOException with stream:     Given I navigate to application open URl                            # Sales_TestScript.i_navigate_to_application_open_URl()
+
+
+# Created at 2024-12-04T18:52:35.083
+Unexpected IOException with stream:     When User Enter Username and Password By click on Login button      # Sales_TestScript.user_Enter_Username_and_Password_By_click_on_Login_button()
+
+
+# Created at 2024-12-04T18:52:35.088
+Unexpected IOException with stream:     Then Login sucessfullY                                              # Sales_TestScript.login_sucessfullY()
+
+
+# Created at 2024-12-04T18:52:35.091
+Unexpected IOException with stream:     And User is in VtigerCRM home page                                  # Sales_TestScript.user_is_in_VtigerCRM_home_page()
+
+
+# Created at 2024-12-04T18:52:35.092
+Unexpected IOException with stream:     And User has click on Sales tab                                     # Sales_TestScript.user_has_click_on_Sales_tab()
+
+
+# Created at 2024-12-04T18:52:35.095
+Unexpected IOException with stream:     And User has click on Leads tab                                     # Sales_TestScript.user_has_click_on_Leads_tab()
+
+
+# Created at 2024-12-04T18:52:35.098
+Unexpected IOException with stream:       org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.108)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-MVHKLV0', ip: '192.168.1.44', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.108, chrome: {chromedriverVersion: 131.0.6778.85 (3d81e41b6f3a..., userDataDir: C:\Users\Avanish\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59149}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e9a3e037fd6a0c502a7f305d1fd32bae
+*** Element info: {Using=xpath, value=//div[@id='Sales_sub']//a[text()='Leads']}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at PageObject.Leads_Page.Leads(Leads_Page.java:35)
+	at stepdefinition.Sales_TestScript.user_has_click_on_Leads_tab(Sales_TestScript.java:129)
+	at ?.User has click on Leads tab(file:src/test/resources/features/Sales.feature:11)
+
+
+
+# Created at 2024-12-04T18:52:35.101
+Unexpected IOException with stream:     And User verify the Creating Leads in Sales by click on Save button # Sales_TestScript.user_verify_the_Creating_Leads_in_Sales_by_click_on_Save_button()
+
+
+# Created at 2024-12-04T18:52:35.102
+Unexpected IOException with stream:     And User verify the checked AllCheck List in Sales page             # Sales_TestScript.user_verify_the_checked_AllCheck_List_in_Sales_page()
+
+
+# Created at 2024-12-04T18:52:35.104
+Unexpected IOException with stream:     And User verify and Delete checklist in Sales page                  # null
+
+
+# Created at 2024-12-04T18:52:35.105
+Unexpected IOException with stream:     And User verify Alert pop up deleting checklist in Sales page       # Sales_TestScript.user_verify_Alert_pop_up_deleting_checklist_in_Sales_page()
+
+
+# Created at 2024-12-04T18:52:35.134
+Unexpected IOException with stream: 
+
+
+# Created at 2024-12-04T18:52:35.138
+Unexpected IOException with stream: Failed scenarios:
+
+
+# Created at 2024-12-04T18:52:35.140
+Unexpected IOException with stream: src/test/resources/features/Sales.feature:5 
+
+# Created at 2024-12-04T18:52:35.141
+Unexpected IOException with stream: # verify the Vtiger Login Page
+
+
+# Created at 2024-12-04T18:52:35.143
+Unexpected IOException with stream: 
+
+
+# Created at 2024-12-04T18:52:35.143
+Unexpected IOException with stream: 1
+
+# Created at 2024-12-04T18:52:35.144
+Unexpected IOException with stream:  Scenarios (
+
+# Created at 2024-12-04T18:52:35.145
+Unexpected IOException with stream: 1 failed
+
+# Created at 2024-12-04T18:52:35.146
+Unexpected IOException with stream: )
+
+
+# Created at 2024-12-04T18:52:35.146
+Unexpected IOException with stream: 10
+
+# Created at 2024-12-04T18:52:35.147
+Unexpected IOException with stream:  Steps (
+
+# Created at 2024-12-04T18:52:35.149
+Unexpected IOException with stream: 1 failed
+
+# Created at 2024-12-04T18:52:35.149
+Unexpected IOException with stream: , 
+
+# Created at 2024-12-04T18:52:35.150
+Unexpected IOException with stream: 3 skipped
+
+# Created at 2024-12-04T18:52:35.151
+Unexpected IOException with stream: , 
+
+# Created at 2024-12-04T18:52:35.151
+Unexpected IOException with stream: 1 undefined
+
+# Created at 2024-12-04T18:52:35.152
+Unexpected IOException with stream: , 
+
+# Created at 2024-12-04T18:52:35.154
+Unexpected IOException with stream: 5 passed
+
+# Created at 2024-12-04T18:52:35.155
+Unexpected IOException with stream: )
+
+
+# Created at 2024-12-04T18:52:35.157
+Unexpected IOException with stream: 0m
+
+# Created at 2024-12-04T18:52:35.159
+Unexpected IOException with stream: 26.716s
+
+
+# Created at 2024-12-04T18:52:35.160
+Unexpected IOException with stream: 
+
+
+# Created at 2024-12-04T18:52:35.161
+Unexpected IOException with stream: org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.108)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-MVHKLV0', ip: '192.168.1.44', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.108, chrome: {chromedriverVersion: 131.0.6778.85 (3d81e41b6f3a..., userDataDir: C:\Users\Avanish\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59149}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e9a3e037fd6a0c502a7f305d1fd32bae
+*** Element info: {Using=xpath, value=//div[@id='Sales_sub']//a[text()='Leads']}
+
+# Created at 2024-12-04T18:52:35.161
+Unexpected IOException with stream: 
+
+
+# Created at 2024-12-04T18:52:35.162
+Unexpected IOException with stream: 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+
+# Created at 2024-12-04T18:52:35.162
+Unexpected IOException with stream: 
+
+
+# Created at 2024-12-04T18:52:35.164
+Unexpected IOException with stream: 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+
+# Created at 2024-12-04T18:52:35.165
+Unexpected IOException with stream: 
+
+
+# Created at 2024-12-04T18:52:35.166
+Unexpected IOException with stream: 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+
+# Created at 2024-12-04T18:52:35.167
+Unexpected IOException with stream: 
+
+
+# Created at 2024-12-04T18:52:35.168
+Unexpected IOException with stream: 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+
+# Created at 2024-12-04T18:52:35.169
+Unexpected IOException with stream: 
+
+
+# Created at 2024-12-04T18:52:35.170
+Unexpected IOException with stream: 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+
+# Created at 2024-12-04T18:52:35.173
+Unexpected IOException with stream: 
+
+
+# Created at 2024-12-04T18:52:35.178
+Unexpected IOException with stream: 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+
+# Created at 2024-12-04T18:52:35.179
+Unexpected IOException with stream: 
+
+
+# Created at 2024-12-04T18:52:35.181
+Unexpected IOException with stream: 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+
+# Created at 2024-12-04T18:52:35.182
+Unexpected IOException with stream: 
+
+
+# Created at 2024-12-04T18:52:35.185
+Unexpected IOException with stream: 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+
+# Created at 2024-12-04T18:52:35.187
+Unexpected IOException with stream: 
+
+
+# Created at 2024-12-04T18:52:35.189
+Unexpected IOException with stream: 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+
+# Created at 2024-12-04T18:52:35.189
+Unexpected IOException with stream: 
+
+
+# Created at 2024-12-04T18:52:35.190
+Unexpected IOException with stream: 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+
+# Created at 2024-12-04T18:52:35.191
+Unexpected IOException with stream: 
+
+
+# Created at 2024-12-04T18:52:35.192
+Unexpected IOException with stream: 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+
+# Created at 2024-12-04T18:52:35.193
+Unexpected IOException with stream: 
+
+
+# Created at 2024-12-04T18:52:35.194
+Unexpected IOException with stream: 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+
+# Created at 2024-12-04T18:52:35.194
+Unexpected IOException with stream: 
+
+
+# Created at 2024-12-04T18:52:35.195
+Unexpected IOException with stream: 	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+
+# Created at 2024-12-04T18:52:35.196
+Unexpected IOException with stream: 
+
+
+# Created at 2024-12-04T18:52:35.196
+Unexpected IOException with stream: 	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+
+# Created at 2024-12-04T18:52:35.197
+Unexpected IOException with stream: 
+
+
+# Created at 2024-12-04T18:52:35.198
+Unexpected IOException with stream: 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+
+# Created at 2024-12-04T18:52:35.199
+Unexpected IOException with stream: 
+
+
+# Created at 2024-12-04T18:52:35.200
+Unexpected IOException with stream: 	at PageObject.Leads_Page.Leads(Leads_Page.java:35)
+
+# Created at 2024-12-04T18:52:35.201
+Unexpected IOException with stream: 
+
+
+# Created at 2024-12-04T18:52:35.202
+Unexpected IOException with stream: 	at stepdefinition.Sales_TestScript.user_has_click_on_Leads_tab(Sales_TestScript.java:129)
+
+# Created at 2024-12-04T18:52:35.204
+Unexpected IOException with stream: 
+
+
+# Created at 2024-12-04T18:52:35.205
+Unexpected IOException with stream: 	at ?.User has click on Leads tab(file:src/test/resources/features/Sales.feature:11)
+
+# Created at 2024-12-04T18:52:35.206
+Unexpected IOException with stream: 
+
+
+# Created at 2024-12-04T18:52:35.207
+Unexpected IOException with stream: 
+
+
+# Created at 2024-12-04T18:52:35.207
+Unexpected IOException with stream: 
+
+
+# Created at 2024-12-04T18:52:35.208
+Unexpected IOException with stream: You can implement missing steps with the snippets below:
+
+
+# Created at 2024-12-04T18:52:35.209
+Unexpected IOException with stream: 
+
+
+# Created at 2024-12-04T18:52:35.209
+Unexpected IOException with stream: @Then("User verify and Delete checklist in Sales page")
+public void user_verify_and_Delete_checklist_in_Sales_page() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new cucumber.api.PendingException();
+}
+
+
+
+# Created at 2024-12-04T18:52:35.386
+Unexpected IOException: 2,1,org.apache.maven.surefire.testng.TestNGDirectoryTestSuite,Testrunner.TestSuiterunner,null,null,null
+
+
