@@ -9,7 +9,7 @@ Scenario: Verify Marketing Page Functionlity
  Then User Login Sucessfully
  And  User Is in Home Page
  
- @Marketing_2 @Marketing_2  @Tc_002
+ @Marketing_2 @Marketing_12  @Tc_002
  Scenario: Verify Marketing Page Functionlity
  
  Given User Navigate to Application URL
