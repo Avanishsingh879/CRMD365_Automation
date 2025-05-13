@@ -1,13 +1,25 @@
 Feature: Verify Documents Page
 
 
-@Docuements @@Docuements_01  @Tc_001
+@Docuements @Docuements_01  @Tc_001
  Scenario: Verify Docuemts Page Functionlity
  
- Given User Navigate to Application URL
+ Given User Navigate To Application URL
  When User Enter UserName and Password by Click on Sign In Button
  Then User Login SucessFully
  And  User Is in home Page
  And  User has click on marketing Tab
  And User has click on account Tab
  And User has click on documents Tab
+ 
+ @Docuements @Docuements_02  @Tc_002
+ Scenario: Verify Docuemts Page Functionlity
+ 
+ Given User Navigate To Application URL
+ When User Enter UserName and Password by Click on Sign In Button
+ Then User Login SucessFully
+ And  User Is in home Page
+ And  User has click on marketing Tab
+ And User has click on account Tab
+ And User has click on documents Tab
+ And User Move to Folder in Document
