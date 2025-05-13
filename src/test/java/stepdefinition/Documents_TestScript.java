@@ -3,10 +3,12 @@ package stepdefinition;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
@@ -15,6 +17,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -104,7 +108,50 @@ public class Documents_TestScript {
 		driver.findElement(By.xpath("//table[3]/tbody/tr/td/table/tbody/tr/td[7]/a")).click();
 		Thread.sleep(1000);
 		System.out.println("User has click on Documents Tab");
-	    
+		
+		WebDriverWait wait=new WebDriverWait(driver,10);
+		WebElement ele=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@title='Documents'][text()='Test1']")));
+		boolean status=ele.isDisplayed();
+		
+		if(status) {
+			
+			System.out.println("Element is Visible");
+		}
+		else {
+			
+			System.out.println("Element is not Visible");
+		}
+		Thread.sleep(1000);
 	}
+	
+	@Then("User Move to Folder in Document")
+	public void user_Move_to_Folder_in_Document() throws InterruptedException, IOException {
+	    
+		List<WebElement>AllList=driver.findElements(By.xpath("//input[@name='selected_id1']"));
+		
+		for(int i=0;i<AllList.size();i++) {
+			
+			AllList.get(0).click();
+			break;
+		}
+		
+		driver.findElement(By.xpath("//input[@name='move']")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//*[@id='movefolderlist']/div/div/table/tbody/tr[3]/td/a")).click();
+		
+		Alert alt=driver.switchTo().alert();
+		String txt=alt.getText();
+		System.out.println(txt);
+		alt.accept();
+		System.out.println("Alert Pop-up Message Clear");
+		Thread.sleep(2000);
+		
+		File srcc=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(srcc, new File("./Screenshots/Alert.png"));
+	    System.out.println("TakeScreenshot alerts");
+		
+	}
+	
+	
 
 }
