@@ -15,9 +15,11 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WrapsElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import cucumber.api.java.en.Given;
@@ -152,6 +154,48 @@ public class Documents_TestScript {
 		
 	}
 	
-	
+
+   @Then("User Add {string},{string} in Documents Functionlity")
+   public void user_Add_in_Documents_Functionlity(String Title, String FileName) throws InterruptedException, IOException {
+    
+	   Thread.sleep(1000);
+	   driver.findElement(By.xpath("//*[@id='basicsearchcolumns_real']")).click();
+	   Thread.sleep(1000);
+	   WebElement SelectData=driver.findElement(By.xpath("//select[@id='bas_searchfield'][1]"));
+	   Select sel=new Select(SelectData);
+	   List<WebElement>sb=sel.getOptions();
+	   //int size=sb.size();
+	   System.out.println(sb);
+	   int size = sb.size();
+	      for(int i =0; i<size ; i++){
+	    	  WebElement ele=sb.get(i);
+	    	  //ele
+	    	  if(ele.getText().equals("Title")) {
+	    		
+	    		  ele.click();
+	    		  break;
+	    		  
+	    	  }
+	         Thread.sleep(1000);
+	   
+	       }
+	      
+	      driver.findElement(By.xpath("//*[@id='searchAcc']/form/table/tbody/tr[1]/td[6]/input")).click();
+	      Thread.sleep(1000);
+	      
+	      File srcc=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+	      FileUtils.copyFile(srcc, new File("./Screenshots/drop.png"));
+	      
+	      driver.findElement(By.xpath("//*[@id=\"FileList_1\"]/table/tbody/tr[2]/td/div/table/tbody/tr[2]/td/a")).click();
+	      Thread.sleep(1000);
+	      WebElement title=driver.findElement(By.xpath("//input[@name='notes_title']"));
+	      title.sendKeys(Title);
+	      Thread.sleep(1000);
+	      
+	      WebElement filename=driver.findElement(By.xpath("//input[@name='filename']"));
+	      filename.sendKeys(FileName);
+	      
+	      Thread.sleep(1000);
+   }	
 
 }

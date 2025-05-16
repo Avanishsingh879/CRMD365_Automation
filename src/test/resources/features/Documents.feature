@@ -23,3 +23,19 @@ Feature: Verify Documents Page
  And User has click on account Tab
  And User has click on documents Tab
  And User Move to Folder in Document
+ 
+ @Docuements @Docuements_03  @Tc_002
+ Scenario Outline: Verify Docuemts Page Functionlity
+ 
+ Given User Navigate To Application URL
+ When User Enter UserName and Password by Click on Sign In Button
+ Then User Login SucessFully
+ And  User Is in home Page
+ And  User has click on marketing Tab
+ And User has click on account Tab
+ And User has click on documents Tab
+ And User Add "<Title>","<FileName>" in Documents Functionlity
+ 
+ Examples:
+ |Title|FileName|
+ |QA|doc1|
