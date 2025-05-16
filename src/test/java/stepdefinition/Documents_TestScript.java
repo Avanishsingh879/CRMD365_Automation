@@ -196,6 +196,58 @@ public class Documents_TestScript {
 	      filename.sendKeys(FileName);
 	      
 	      Thread.sleep(1000);
-   }	
+   }
+   
+   @Then("User the Quickcreate List in Quickcreate Page")
+   public void user_the_Quickcreate_List_in_Quickcreate_Page() throws InterruptedException {
+      
+	   Thread.sleep(1000);
+	   WebElement selectdtata=driver.findElement(By.xpath("//select[@id='qccombo']"));
+	   
+	   String[]str= {"Quick Create...","New Account","New Asset","New To Do"};
+	   
+	   Select sel=new Select(selectdtata);
+	   
+	   List<WebElement>AllList=sel.getOptions();
+	   
+	   for(WebElement we:AllList) {
+		   
+	   for(int i=0;i<str.length;i++) {
+		   
+		   if(we.getText().equals(str[i])) {
+			   
+			   System.out.println("Matched");
+		   }
+		   
+		  Thread.sleep(1000);
+	   }
+	   
+	   
+	   }   
+	   
+	   
+	   
+	   
+   }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
