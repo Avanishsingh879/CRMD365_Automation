@@ -227,7 +227,7 @@ public class Documents_TestScript {
 	     
    }
    /////////////////////////////////////////////////////////////
-   
+   ///Verify List
    
    @Then("User Verify the List of Documents in Documents Page")
    public void user_Verify_the_List_of_Documents_in_Documents_Page() throws InterruptedException {
@@ -238,6 +238,7 @@ public class Documents_TestScript {
 	   String[]s1= {"Document No","Title","File Name","Modified Time","Assigned To","Download Type"};
 	   
 	   Select sel=new Select(ele);
+	   
 	   List<WebElement>allLists=sel.getOptions();
 	   
 	   for(WebElement ws:allLists) {
