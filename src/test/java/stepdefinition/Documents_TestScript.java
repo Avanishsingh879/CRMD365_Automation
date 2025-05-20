@@ -224,10 +224,37 @@ public class Documents_TestScript {
 	   
 	   
 	   }   
+	     
+   }
+   /////////////////////////////////////////////////////////////
+   
+   
+   @Then("User Verify the List of Documents in Documents Page")
+   public void user_Verify_the_List_of_Documents_in_Documents_Page() throws InterruptedException {
+	   
+	   Thread.sleep(1000);
+	   WebElement ele=driver.findElement(By.xpath("//select[@id='bas_searchfield']"));
+	   
+	   String[]s1= {"Document No","Title","File Name","Modified Time","Assigned To","Download Type"};
+	   
+	   Select sel=new Select(ele);
+	   List<WebElement>allLists=sel.getOptions();
+	   
+	   for(WebElement ws:allLists) {
+		   
+		   for(int i=0;i<s1.length;i++) {
+			   
+			   if(ws.getText().equals(s1[i])) {
+				   
+				   System.out.println("Title Matched");
+			   }
+			   
+			  Thread.sleep(1000);
+		   }
+	   }
 	   
 	   
-	   
-	   
+       
    }
 
 }
