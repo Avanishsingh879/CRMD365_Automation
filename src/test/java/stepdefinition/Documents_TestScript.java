@@ -257,6 +257,50 @@ public class Documents_TestScript {
 	   
        
    }
+   
+   @Then("User Verify the List of ServiceContacts in Support Page")
+   public void user_Verify_the_List_of_ServiceContacts_in_Support_Page() throws InterruptedException {
+	   
+	   WebElement Hover=driver.findElement(By.xpath("//a[text()='Support']"));
+	   Thread.sleep(1000);
+	   
+	   Actions act=new Actions(driver);
+	   act.moveToElement(Hover).build().perform();
+	   
+	   driver.findElement(By.xpath("//div[@id='Support_sub']/table/tbody/tr/td//a[text()='Trouble Tickets']")).click();
+	   
+	   Thread.sleep(1000);
+	   
+	
+	   driver.findElement(By.xpath("//a[contains(text(), 'Service Contracts')][1]")).click();
+	   
+	   Thread.sleep(1000);
+	   
+	   WebElement serch=driver.findElement(By.xpath("//preceding-sibling::select[@id='bas_searchfield']"));
+	   
+	   Select sel=new Select(serch);
+	   
+	   String[]str= {"Contract No","Subject","Related to"};
+	   
+	   List<WebElement>allList=sel.getOptions();
+	   
+	   for(WebElement we:allList) {
+		   
+		   
+		   for(int i=0;i<str.length;i++) {
+			   
+			   if(we.getText().equals(str[i])) {
+				   
+				   System.out.println("All List is Mtched");
+			   }
+			   Thread.sleep(1000);
+		   }
+	   }
+	   
+	   
+	   
+       
+   }
 
 }
 
