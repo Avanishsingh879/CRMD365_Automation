@@ -207,6 +207,10 @@
         </execution>
     </executions>
     <configuration>
+		
+		<parallel>methods</parallel>
+					<threadCount>10</threadCount>
+					<perCoreThreadCount>false</perCoreThreadCount>
         <sourceJsonReportDirectory>${project.build.directory}/cucumber-report</sourceJsonReportDirectory>
         <generatedHtmlReportDirectory>${project.build.directory}/generated-report</generatedHtmlReportDirectory>
     </configuration>    
