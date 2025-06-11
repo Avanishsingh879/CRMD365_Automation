@@ -7,7 +7,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 		strict = true,
 		monochrome = true, 
 		features = {"src/test/resources/features/"},
-		tags={"@Invoice_02"},
+		tags={"@Quotes_02"},
 		glue = {"stepdefinition","Testrunner"}, 	
 		plugin = {
 	                "io.qameta.allure.cucumber4jvm.AllureCucumber4Jvm",
