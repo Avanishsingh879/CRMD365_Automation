@@ -1,78 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-21T10:37:16Z" name="Surefire suite" finished-at="2025-06-21T10:38:09Z" duration-ms="52756">
+  <suite started-at="2025-06-30T20:37:50Z" name="Surefire suite" finished-at="2025-06-30T20:38:26Z" duration-ms="35571">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:Testrunner.TestSuiterunner@4d339552]" name="runScenario" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:Testrunner.TestSuiterunner@5a4aa2f2]" name="runScenario" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-06-21T10:37:16Z" name="Surefire test" finished-at="2025-06-21T10:38:09Z" duration-ms="52756">
+    <test started-at="2025-06-30T20:37:50Z" name="Surefire test" finished-at="2025-06-30T20:38:26Z" duration-ms="35571">
       <class name="Testrunner.TestSuiterunner">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Testrunner.TestSuiterunner@4d339552]" started-at="2025-06-21T10:37:16Z" name="setUpClass" finished-at="2025-06-21T10:37:17Z" duration-ms="241" status="PASS">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Testrunner.TestSuiterunner@5a4aa2f2]" started-at="2025-06-30T20:37:50Z" name="setUpClass" finished-at="2025-06-30T20:37:51Z" duration-ms="313" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:Testrunner.TestSuiterunner@4d339552]" started-at="2025-06-21T10:37:17Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-06-21T10:38:09Z" duration-ms="52391" status="FAIL">
+        <test-method signature="runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:Testrunner.TestSuiterunner@5a4aa2f2]" started-at="2025-06-30T20:37:51Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-06-30T20:38:26Z" duration-ms="35046" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["User Create and Verify SalesOrder"]]>
+                <![CDATA["Verify the ProjectMilestones Page deatils"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Verify SalesOrder Page Functionlity"]]>
+                <![CDATA["Validating the ProjectMilestones Functionlity"]]>
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//a[@id='popup_product_5']"}
-  (Session info: chrome=137.0.7151.119)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-MVHKLV0', ip: '192.168.1.5', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.119, chrome: {chromedriverVersion: 137.0.7151.55 (254bc711794d..., userDataDir: C:\Users\Avanish\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54587}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 94de0a990ae9199d791a11b5c4d3e0f6
-*** Element info: {Using=xpath, value=//a[@id='popup_product_5']}]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[@id='popup_product_5']"}
-  (Session info: chrome=137.0.7151.119)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-MVHKLV0', ip: '192.168.1.5', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.119, chrome: {chromedriverVersion: 137.0.7151.55 (254bc711794d..., userDataDir: C:\Users\Avanish\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54587}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 94de0a990ae9199d791a11b5c4d3e0f6
-*** Element info: {Using=xpath, value=//a[@id='popup_product_5']}
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at stepdefinition.SalesOrder_TestScript.user_create_and_Verify_New_SalesOrder(SalesOrder_TestScript.java:114)
-at ✽.User create and Verify New SalesOrder"Test","Noida","Delhi"(file:src/test/resources/features/SalesOrder.feature:26)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Testrunner.TestSuiterunner@4d339552]" started-at="2025-06-21T10:38:09Z" name="tearDownClass" finished-at="2025-06-21T10:38:09Z" duration-ms="43" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Testrunner.TestSuiterunner@5a4aa2f2]" started-at="2025-06-30T20:38:26Z" name="tearDownClass" finished-at="2025-06-30T20:38:26Z" duration-ms="113" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
