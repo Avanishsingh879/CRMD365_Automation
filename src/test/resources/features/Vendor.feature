@@ -1,41 +1,34 @@
-Feature: Validating the Vendor Functionlity
+Feature: Validating the Vendor Page Functionlity
 
+@ignore
+@Regression  @Ven_01  @Tc_001
+Scenario Outline: Verify the the Vendor Functionlity
 
-@Regression  @Vendor  @TC_001   
-Scenario Outline: Verify the Vendor Functionlity
-
-Given User navigate to launch Browser
-
-When  User Login with "<Username>" and "<Password>" by click on Login Tab
-
-Then  User able to login sucessfully
-
-And   User Home page Functionlity
-
-And   User Able to click on Vendor Tab
+Given I Navigate to open Application Url
+When User enter username "<Uname>" and password "<pwd>" by click on Login Button
+Then User Login
+And  User able to verify Home Page Functionlity
+And User verify the Vendor Tab
 
 Examples:
 
-|Username|Password|
+|Uname|pwd|
 |admin|admin|
 
 
-@Regression  @Vendor1  @TC_002  
-Scenario Outline: Verify the Vendor Functionlity
+@Regression  @Ven_02  @Tc_002
+Scenario Outline: Verify the the Vendor Functionlity
 
-Given User navigate to launch Browser
-
-When  User Login with "<Username>" and "<Password>" by click on Login Tab
-
-Then  User able to login sucessfully
-
-And   User Home page Functionlity
-
-And   User Able to click on Vendor Tab
-
-And   User Verify the List Data in Vendor
+Given I Navigate to open Application Url
+When User enter username "<Uname>" and password "<pwd>" by click on Login Button
+Then User Login
+And  User able to verify Home Page Functionlity
+And User verify the Vendor Tab
+And  User verify VendorList in Vendor Page
 
 Examples:
 
-|Username|Password|
+|Uname|pwd|
 |admin|admin|
+
+
