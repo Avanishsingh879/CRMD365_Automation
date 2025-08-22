@@ -1,23 +1,41 @@
-Feature: Validating to the Quotes Functionlity
+Feature: Validating the Quotes Page Funcionlity
 
 
-@Regression  @Quotes_01  @TC_001
-Scenario: User Verify the Quotes Page
+@Regression   @quotes_01   @tc_001
+Scenario Outline: verify the Quotes Page Functionlity
 
-Given  User verify and Open Application
-When   User enter Uname and pssword by click on SignIn Button
-Then  User Login Page
-And   User verify Home page functionlity
-And  User verify and New Create Quotes Page
+Given user Navigate to Application url
+
+When User enter UserName"<Uname>" and passWord"<pwd>" by click on Login Button
+
+Then user able to login Sucessfully
+
+And  user verify the home page functionlity
+
+And  user able to click quotes tab
+
+Examples:
+
+|Uname|pwd|
+|admin|admin|
 
 
+@Regression   @quotes_02   @tc_001
+Scenario Outline: verify the Quotes Page Functionlity
 
-@Regression  @Quotes_02  @TC_001
-Scenario: User Verify the Quotes Page
+Given user Navigate to Application url
 
-Given  User verify and Open Application
-When   User enter Uname and pssword by click on SignIn Button
-Then  User Login Page
-And   User verify Home page functionlity
-And  User verify and New Create Quotes Page
-And User verify the QuotesList in Quotes Page 
+When User enter UserName"<Uname>" and passWord"<pwd>" by click on Login Button
+
+Then user able to login Sucessfully
+
+And  user verify the home page functionlity
+
+And  user able to click quotes tab
+
+And user verify the QuotesList in Quotes
+
+Examples:
+
+|Uname|pwd|
+|admin|admin|
