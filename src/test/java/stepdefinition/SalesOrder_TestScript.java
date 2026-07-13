@@ -38,7 +38,7 @@ public class SalesOrder_TestScript {
 		FileInputStream fis=new FileInputStream("Config.properties");
 		files=new Properties();
 		files.load(fis);
-		System.setProperty("webdriver.chrome.driver", "Drivers\\chromedriver_137.exe");
+		System.setProperty("webdriver.chrome.driver", "Drivers\\chromedriver_144.exe");
 		driver=new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.manage().window().maximize();

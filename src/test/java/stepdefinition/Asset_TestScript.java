@@ -46,7 +46,7 @@ public class Asset_TestScript {
 		
 		File src=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(src, new File("./Screenshots/Test.png"));
-		System.out.println("ScreenShot Taken");
+		System.out.println("ScreenShot Taken");///
 	    
 	}
 
