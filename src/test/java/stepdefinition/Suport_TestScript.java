@@ -1,8 +1,9 @@
 package stepdefinition;
 
+import static org.testng.Assert.assertEquals;
+
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
@@ -19,103 +20,85 @@ import org.openqa.selenium.interactions.Actions;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import junit.framework.Assert;
 
 public class Suport_TestScript {
-	
 	
 	
 	public static WebDriver driver;
 	public static Properties files;
 	
-	@Given("I navigate To Application open URl")
-	public void i_navigate_To_Application_open_URl() throws IOException, InterruptedException {
+	
+	@Given("User Navigate the Open URL")
+	public void user_Navigate_the_Open_URL() throws IOException {
 		
 		FileInputStream fis=new FileInputStream("Config.properties");
 		files=new Properties();
 		files.load(fis);
-		System.setProperty("webdriver.chrome.driver", "Drivers\\chromedriver_121.exe");
+		
+		System.setProperty("webdriver.chrome.driver", "Drivers\\chromedriver_150.exe");
 		driver=new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.get(files.getProperty("Url"));
 		System.out.println("Browser launch");
-		File src=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(src, new File("./Screenshots/LoginPage.png"));
-		Thread.sleep(2000);
+		
+		
+	}
+
+	@When("User Enter username and password by click on SignIN Button")
+	public void user_Enter_username_and_password_by_click_on_SignIN_Button() throws InterruptedException {
+	
+	Thread.sleep(1000);
+	WebElement Uname=driver.findElement(By.xpath("//input[@name='user_name']"));
+	Uname.sendKeys(files.getProperty("username"));
+	driver.findElement(By.xpath("//input[@name='user_password']")).sendKeys(files.getProperty("password"));
+	driver.findElement(By.xpath("//input[@name='Login']")).click();
+	   
+	}
+	
+	@Then("User Login Sucessfully Page")
+	public void user_Login_Sucessfully_Page() {
+	   
+	String actualTitle=driver.getTitle();
+	String ExpTitle="admin - My Home Page - Home - vtiger CRM 5 - Commercial Open Source CRM";
+	Assert.assertEquals(actualTitle, ExpTitle);
+	System.out.println("Title Matched");
+	
 	
 	}
 
-	@When("user Enter Username and Password By click on Login button")
-	public void user_Enter_Username_and_Password_By_click_on_Login_button() throws InterruptedException {
+	@Then("User Verify the HomePage Functionlity")
+	public void user_Verify_the_HomePage_Functionlity() {
 		
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//input[@name='user_name']")).sendKeys(files.getProperty("username"));
-		driver.findElement(By.xpath("//input[@name='user_password']")).sendKeys(files.getProperty("password"));
-		Thread.sleep(1000);
-		WebElement Sign_Link=driver.findElement(By.xpath("//input[@name='Login']"));
-		Sign_Link.click();
-		Thread.sleep(2000);  
-	}
-
-	@Then("User is in VtigercRM home page")
-	public void user_is_in_VtigercRM_home_page() {
-		
-		String actTitle=driver.getTitle();
-		String ExcTitle="admin - My Home Page - Home - vtiger CRM 5 - Commercial Open Source CRM";
-		if(actTitle.equalsIgnoreCase(ExcTitle)) {
-			
-			System.out.println("Title Matched");
-		}
-		else {
-			
-			System.out.println("Title is Not Matched");
-		}
+		System.out.println("Login Sucessfully");
 	   
 	}
-
-	@Then("User has click on Support tab")
-	public void user_has_click_on_Support_tab() throws InterruptedException {
+	
+	@Then("User Able to click on Support Tab")
+	public void user_able_to_click_on_Support_Tab() {
+	
+	driver.findElement(By.xpath("//a[text()='Support']")).click();
+	System.out.println("User able to click on Support tab");
+		
+	}
+	
+	@Then("User Able to click on Account Tab")
+	public void user_Able_to_click_on_Account_Tab() throws InterruptedException {
 		
 		Thread.sleep(1000);
-		WebElement supp=driver.findElement(By.linkText("Support"));
-		//supp.click();
-	    
-	}
-
-	@Then("User has click on Contacts tab")
-	public void user_has_click_on_Contacts_tab() throws InterruptedException, IOException {
-		
-		WebElement Support_MouseHover=driver.findElement(By.xpath("//a[text()='Support']"));
-		String text=Support_MouseHover.getText();
-		System.out.println(text);
+		WebElement hover=driver.findElement(By.xpath("//a[text()='Support']"));
 		Actions act=new Actions(driver);
-		act.moveToElement(Support_MouseHover).build().perform();
-		WebElement contacts=driver.findElement(By.xpath("//div[@id='Support_sub']/table/tbody/tr[4]//a"));
-		contacts.click();
-		Thread.sleep(1000);
-		File scrc=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(scrc, new File("./Screenshots/Cont.png"));
-		System.out.println("User Has Click on Contact Tab");
-		
+		act.moveToElement(hover).build().perform();
+		WebElement ele=driver.findElement(By.xpath("//a[text()='Accounts']"));
+		ele.click();
 		
 	   
 	}
-
-	@Then("User verify the Creating Contacts in Support by click on Save button")
-	public void user_verify_the_Creating_Contacts_in_Support_by_click_on_Save_button() {
-	   
-	}
-    
-	///Date-1-10-2023
-	@Then("User has click on Documents tab")
-	public void user_has_click_on_Documents_tab() {
-	   
-	}
-     
-	///Date-1-10-2023
-	@Then("User verify the Creating Documents in Support Tab by click on Save button")
-	public void user_verify_the_Creating_Documents_in_Support_Tab_by_click_on_Save_button() {
-	    
-	}
-
 }
+
+
+
+
+
+
