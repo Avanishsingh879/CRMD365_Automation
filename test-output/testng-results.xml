@@ -1,36 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-07-18T13:01:58Z" name="Default suite" finished-at="2026-07-18T13:02:44Z" duration-ms="45248">
+  <suite started-at="2026-08-03T04:24:16Z" name="Default suite" finished-at="2026-08-03T04:24:45Z" duration-ms="28929">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:Testrunner.TestSuiterunner@11d8ae8b]" name="runScenario" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:Testrunner.TestSuiterunner@7354b8c5]" name="runScenario" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2026-07-18T13:01:58Z" name="Default test" finished-at="2026-07-18T13:02:44Z" duration-ms="45248">
+    <test started-at="2026-08-03T04:24:16Z" name="Default test" finished-at="2026-08-03T04:24:45Z" duration-ms="28929">
       <class name="Testrunner.TestSuiterunner">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Testrunner.TestSuiterunner@11d8ae8b]" started-at="2026-07-18T13:01:58Z" name="setUpClass" finished-at="2026-07-18T13:01:59Z" duration-ms="1007" status="PASS">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Testrunner.TestSuiterunner@7354b8c5]" started-at="2026-08-03T04:24:16Z" name="setUpClass" finished-at="2026-08-03T04:24:17Z" duration-ms="520" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:Testrunner.TestSuiterunner@11d8ae8b]" started-at="2026-07-18T13:02:00Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-07-18T13:02:44Z" duration-ms="43806" status="PASS">
+        <test-method signature="runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:Testrunner.TestSuiterunner@7354b8c5]" started-at="2026-08-03T04:24:17Z" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-08-03T04:24:45Z" duration-ms="28203" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["verify the Account tab in Support Page"]]>
+                <![CDATA["Verify the support Page"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Validating Support page"]]>
+                <![CDATA["Validating the Support Page"]]>
               </value>
             </param>
           </params>
+          <exception class="cucumber.runtime.CucumberException">
+            <message>
+              <![CDATA[There are undefined steps]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[cucumber.runtime.CucumberException: There are undefined steps
+at cucumber.api.testng.TestCaseResultListener.getError(TestCaseResultListener.java:58)
+at cucumber.api.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:61)
+at cucumber.api.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:22)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- cucumber.runtime.CucumberException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Testrunner.TestSuiterunner@11d8ae8b]" started-at="2026-07-18T13:02:44Z" name="tearDownClass" finished-at="2026-07-18T13:02:44Z" duration-ms="88" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Testrunner.TestSuiterunner@7354b8c5]" started-at="2026-08-03T04:24:45Z" name="tearDownClass" finished-at="2026-08-03T04:24:45Z" duration-ms="47" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
