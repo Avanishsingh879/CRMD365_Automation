@@ -7,6 +7,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
 import java.util.Properties;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.maven.shared.utils.io.FileUtils;
@@ -20,6 +21,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
 import com.gargoylesoftware.htmlunit.javascript.background.JavaScriptExecutor;
+import com.gargoylesoftware.htmlunit.javascript.host.Iterator;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -123,6 +125,45 @@ public class Suport_TestScript {
         driver.findElement(By.xpath("//input[@class='crmbutton small save']")).click();
         Thread.sleep(1000);
 	}
+	
+	@Then("User verify and create SendEmail in Contact Page")
+	public void user_verify_and_create_SendEmail_in_Contact_Page() throws IOException, InterruptedException {
+	  
+	WebElement ele=driver.findElement((By.xpath("//div[@id='Support_sub']//a[text()='Contacts']")));
+	ele.click();
+	
+	File files2=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+    FileUtils.copyFile(files2, new File("./Screenshots/TestNew.png"));
+    
+    driver.findElement(By.xpath("//input[@name='selected_id']")).click();
+    
+    System.out.println("Check box checked");
+    driver.findElement(By.xpath("//input[@value='Send Mail'][1]")).click();
+    
+    Thread.sleep(1000);
+    
+    String mainwindow=driver.getWindowHandle();
+    System.out.println(mainwindow);
+    Set<String>set=driver.getWindowHandles();
+    
+    java.util.Iterator<String> itr1=set.iterator();
+    while(itr1.hasNext()==true) {
+    	
+    	String childwindow=itr1.next();
+    	System.out.println(childwindow);
+    	String Title=driver.switchTo().window(childwindow).getTitle();
+    	
+    	if(Title.equals("Compose Mail")) {
+    		
+    		break;
+    		
+    	} 	
+    }
+	
+    driver.findElement(By.xpath("//input[@id='subject']")).sendKeys("Test");
+	} 
+	
+	       
 	
 }
 
