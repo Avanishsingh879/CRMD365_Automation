@@ -1,31 +1,30 @@
-Feature: Verify SalesOrder Page Functionlity
+Feature: Validating the SalesOrder Functionlity Page
 
+@Regression   @SalesOrder_1  @TC_01
+Scenario Outline: Validate the SalesOrder
 
-@Regression  @Sales_Order  @Tc_001
-Scenario Outline: User Create and Verify SalesOrder
-
-Given User Open and Navigate to Application Url
-When  User Enter userName"<userName>" and Password"<passwd>" by click on Login Button
-Then  User able to Login Sucessfully
-And   User able to Verify Home Page Functionlity
-And   User create and verify SalesOrder in Sales Page
+Given  User Navigate the Application Url
+When   User Enter username"<Uname>" and Password"<Pwd>" by click on Sign Button
+Then   User Login Sucessfully page
+And    User Verify Title in Home Page
 
 Examples:
 
-|userName|passwd|
+|Uname|Pwd|
 |admin|admin|
 
-@Regression  @Sales_Order_2  @Tc_001
-Scenario Outline: User Create and Verify SalesOrder
 
-Given User Open and Navigate to Application Url
-When  User Enter userName"<userName>" and Password"<passwd>" by click on Login Button
-Then  User able to Login Sucessfully
-And   User able to Verify Home Page Functionlity
-And   User create and verify SalesOrder in Sales Page
-And   User create and Verify New SalesOrder"<Subject>","<BillingAddress>","<ShippingAddress>"
+@Regression   @SalesOrder_2  @TC_02
+Scenario Outline: Validate the SalesOrder
+
+Given  User Navigate the Application Url
+When   User Enter username"<Uname>" and Password"<Pwd>" by click on Sign Button
+Then   User Login Sucessfully page
+And    User Verify Title in Home Page
+And    User Verify and create Sales Order
 
 Examples:
 
-|userName|passwd|Subject|BillingAddress|ShippingAddress|
-|admin|admin|Test|Noida|Delhi|
+|Uname|Pwd|
+|admin|admin|
+
