@@ -1,42 +1,27 @@
-Feature: Validating the Ssrvice Page Functionlity
+Feature: Validating the Service Page Functionlity
 
+@Regression    @Service_01    @TC_001
+Scenario Outline: Verify the Service Page funcltionlty in Inentory
 
-@Regression   @Serv_01    @Tc_001
-Scenario Outline: Verify the Service Functionlity
-
-Given User navigate to open url
-
-When  User able to Enter UserName"<Uname>" and Password"<Pwd>" by click on Login Button
-
-Then  user Able to Login sucessfully
-
-And   User Verify the home page functionliy Data
-
-And   User verify and create service tab
+Given User Navigate Application Url
+When  User enter"<Uname>" and password "<Pwd>" by click on Sign button
+Then  User Login Sucessfully Page
+And   User verify Home Page title
 
 Examples:
-
 |Uname|Pwd|
 |admin|admin|
 
+@Regression    @Service_02    @TC_02
+Scenario Outline:Verify the Service Page Functionlity in Inventory
 
-@Regression   @Serv_02    @Tc_001
-Scenario Outline: Verify the Service Functionlity
-
-Given User navigate to open url
-
-When  User able to Enter UserName"<Uname>" and Password"<Pwd>" by click on Login Button
-
-Then  user Able to Login sucessfully
-
-And   User Verify the home page functionliy Data
-
-And   User verify and create service tab
-
-And  User verify the ServiceList data in List
+Given User Navigate Application Url
+When  User enter"<Uname>" and password "<Pwd>" by click on Sign button
+Then  User Login Sucessfully Page
+And   User verify Home Page title
+And   User able to create a new Service Page
 
 Examples:
-
 |Uname|Pwd|
 |admin|admin|
 
