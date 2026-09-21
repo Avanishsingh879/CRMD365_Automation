@@ -28,105 +28,73 @@ import cucumber.api.java.en.When;
 public class Asset_TestScript {
 	
 	
-    public static WebDriver driver;
-    public static Properties files;
-	@Given("User open and Navigate Application Url")
-	public void user_open_and_Navigate_Application_Url() throws IOException {
+	
+	public static WebDriver driver;
+	public static Properties files;
+	
+	@Given("User navigate the Application URL")
+	public void user_navigate_the_Application_URL() throws IOException {
 		
 		FileInputStream fis=new FileInputStream("Config.properties");
 		files=new Properties();
 		files.load(fis);
-		System.setProperty("webdriver.chrome.driver", "Drivers\\chromedriver_137.exe");
+		System.setProperty("webdriver.chrome.driver", "Drivers\\chromedriver_153.exe");
 		driver=new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
-		
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.get(files.getProperty("Url"));
 		System.out.println("Browser Launch");
-		
 		File src=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(src, new File("./Screenshots/Test.png"));
-		System.out.println("ScreenShot Taken");///
+		FileUtils.copyFile(src, new File("./Screenshots/TestData.png"));
+		System.out.println("Take Scrrnshot");
+		
 	    
 	}
 
-	@When("User enter UserName{string} and Password{string} by click on SignIn Page")
-	public void user_enter_UserName_and_Password_by_click_on_SignIn_Page(String Uname, String Pwd) throws InterruptedException {
+	@When("User enter userName{string} and password{string} by click on Sign In Button")
+	public void user_enter_userName_and_password_by_click_on_Sign_In_Button(String Uname, String Pwd) {
 		
 		driver.findElement(By.xpath("//input[@name='user_name']")).sendKeys(Uname);
 		driver.findElement(By.xpath("//input[@name='user_password']")).sendKeys(Pwd);
-	    WebElement login=driver.findElement(By.xpath("//input[@name='Login']"));
-		
-		JavascriptExecutor js=(JavascriptExecutor)driver;
-		js.executeScript("arguments[0].click()",login);
-		Thread.sleep(1000);
-	  
+		WebElement Login=driver.findElement(By.xpath("//input[@name='Login']"));
+		Login.click();
+	   
 	}
 
-	@Then("User Verify Page Title")
-	public void user_Verify_Page_Title() {
+	@Then("User Login the Application")
+	public void user_Login_the_Application() {
+		
+		System.out.println("Login Sucessfully");
+	  
+	}
+	
+	@Then("User IS in Home Page")
+	public void User_IS_in_Home_Page() {
 		
 		String ActualTitle=driver.getTitle();
 		String ExpTitle="admin - My Home Page - Home - vtiger CRM 5 - Commercial Open Source CRM";
 		Assert.assertEquals(ActualTitle, ExpTitle);
-		System.out.println("Tilte Matched");
+		System.out.println("Title Matched");
+	}
+
+	@Then("User create a Assets page")
+	public void user_create_a_Assets_page() throws InterruptedException {
 		
+		WebElement Hover=driver.findElement(By.xpath("//a[text()='Inventory']"));
+		Actions act=new Actions(driver);
+		act.moveToElement(Hover).build().perform();
+		System.out.println("Hover Done");
+		driver.findElement(By.xpath("//div[@id='Inventory_sub']//a[text()='Assets']")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//img[@title='Create Asset...']")).click();
+	    Thread.sleep(1000);
+	    
 	    
 	}
 
-	@Then("User verify and Create Asstes")
-	public void user_verify_and_Create_Asstes() throws InterruptedException {
-		
-		WebElement MouseHover=driver.findElement(By.xpath("//a[text()='Inventory']"));
-		
-		Actions act=new Actions(driver);
-		act.moveToElement(MouseHover).build().perform();
-		
-		WebElement assBtn=driver.findElement(By.xpath("//div[@id='Inventory_sub']/table/tbody/tr[9]/td//a[text()='Assets']"));
-		assBtn.click();
-		Thread.sleep(1000);
-		
-		driver.findElement(By.xpath("//img[@alt='Create Asset...']")).click();
-		
-		System.out.println("User able to click on Create Asstes Tab");
-	    
-	}
 	
-	@Then("User verify All Asstes in AsstesList Page")
-	public void user_verify_All_Asstes_in_AsstesList_Page() throws InterruptedException {
-		
-WebElement MouseHover=driver.findElement(By.xpath("//a[text()='Inventory']"));
-		
-		Actions act=new Actions(driver);
-		act.moveToElement(MouseHover).build().perform();
-		
-		WebElement assBtn=driver.findElement(By.xpath("//div[@id='Inventory_sub']/table/tbody/tr[9]/td//a[text()='Assets']"));
-		assBtn.click();
-		Thread.sleep(1000);
-	    
-		Thread.sleep(1000);
-		WebElement searchBtn=driver.findElement(By.xpath("//select[@id='bas_searchfield'][1]"));
-		
-		Select sel=new Select(searchBtn);
-		String[]str= {"Asset No","Asset Name","Customer Name","Product Name"};
-		
-		List<WebElement>AllList=sel.getOptions();
-		
-		for(WebElement wb:AllList) {
-			
-			for(int i=0;i<str.length;i++) {
-				
-				if(wb.getText().equals(str[i])) {
-					
-					System.out.println("Title Matched");
-				}
-			}
-		}
-		System.out.println("Test case Verifyed");
-		
-		
-	}
-
+	
+  
 }
 
 

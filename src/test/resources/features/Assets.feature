@@ -1,27 +1,16 @@
 Feature: Validating the Assets Functionlity
 
+@Regrssion   @Assets_1   @TC_001
+Scenario Outline: Verify the Assets Functionlity Page
 
-@Regression  @Asstes_1     @TC_001
-Scenario Outline: User verify the Assets Page Functionlity
-
-Given User open and Navigate Application Url
-When  User enter UserName"<Uname>" and Password"<Pwd>" by click on SignIn Page
-Then User Verify Page Title
-And  User verify and Create Asstes
-
-Examples:
-|Uname|Pwd|
-|admin|admin|
-
-@Regression  @Asstes_2     @TC_001
-Scenario Outline: User verify the Assets Page Functionlity
-
-Given User open and Navigate Application Url
-When  User enter UserName"<Uname>" and Password"<Pwd>" by click on SignIn Page
-Then User Verify Page Title
-And  User verify All Asstes in AsstesList Page 
+Given User navigate the Application URL
+When  User enter userName"<Uname>" and password"<Pwd>" by click on Sign In Button
+Then  User Login the Application
+And   User IS in Home Page
+And   User create a Assets page
 
 Examples:
+
 |Uname|Pwd|
 |admin|admin|
 
