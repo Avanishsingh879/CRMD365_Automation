@@ -28,99 +28,49 @@ import cucumber.api.java.en.When;
 public class ServiceContact_TestScript {
 	
 	
-	public static WebDriver driver;
-	public static Properties files;
+public static WebDriver driver;
 	
-	@Given("User Navigate to Launch Application")
-	public void user_Navigate_to_Launch_Application() throws IOException, InterruptedException {
-		
-		FileInputStream fis=new FileInputStream("Config.properties");
-		files=new Properties();
-		files.load(fis);
-	    System.setProperty("webdriver.chrome.driver", "Drivers\\chromedriver_144.exe");
-	    driver=new ChromeDriver();
-	    driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-	    driver.manage().window().maximize();
-	    driver.get(files.getProperty("Url"));
-	    Thread.sleep(1000);
-	    
-	   
-	}
+@Given("USER Navigate THE Application UrL")
+public void user_Navigate_THE_Application_UrL() {
+	
+	System.setProperty("webdriver.chrome.drvier", "Drivers\\chromedriver_153.exe");
+	driver=new ChromeDriver();
+	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	driver.manage().window().maximize();
+	driver.get("http://localhost:8888/");
+	System.out.println("Launch Browser");
+	 
+	
+	
+}
+ 
 
-	@When("User enter {string} and {string} by click on Login Page")
-	public void user_enter_and_by_click_on_Login_Page(String Uname, String Password) throws InterruptedException, IOException {
-		
-		driver.findElement(By.xpath("//input[@name='user_name']")).sendKeys(Uname);
-		driver.findElement(By.xpath("//input[@name='user_password']")).sendKeys(Password);
-		
-		WebElement login=driver.findElement(By.xpath("//input[@name='Login']"));
-		JavascriptExecutor js=(JavascriptExecutor)driver;
-		js.executeScript("arguments[0].click()",login);
-		
-		Thread.sleep(1000);
-		
-		File src=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(src, new File("./Screenshots/newissue.png"));
-	    
-	}
+@When("User Enter usernamE And password by click on sign buttoN")
+public void user_Enter_usernamE_And_password_by_click_on_sign_buttoN() {
+	
+   driver.findElement(By.xpath("//input[@name='user_name']")).sendKeys("admin");
+   driver.findElement(By.xpath("//input[@name='user_paasword']")).sendKeys("admin");
+   driver.findElement(By.xpath("//input[@name='Login']")).click();
+   
+    
+}
 
-	@Then("User verify Login Page")
-	public void user_verify_Login_Page() {
-		
-		System.out.println("Login Sucessfully");
-	    
-	}
+@Then("Login scuessFully")
+public void login_scuessFully() {
+	
+       String actualresult=driver.getTitle();
+       String ExpResult="admin - My Home Page - Home - vtiger CRM 5 - Commercial Open Source CRM1";
+       Assert.assertEquals(actualresult, ExpResult);
+       System.out.println("Title Matched");
+	
+}
 
-	@Then("User verify the Home Page Functionlity")
-	public void user_verify_the_Home_Page_Functionlity() {
-	   
-		String ActualTitle=driver.getTitle();
-		String expTitle="admin - My Home Page - Home - vtiger CRM 5 - Commercial Open Source CRM";
-		
-		Assert.assertEquals(ActualTitle, expTitle);
-		System.out.println("Ttile Matched");
-		
-	}
 
-	@Then("User verify and create new ServiceContact{string} Page")
-	public void user_verify_and_create_new_ServiceContact_Page(String Subject) throws InterruptedException {
-		
-		WebElement MuoseHover=driver.findElement(By.xpath("//a[text()='Support']"));
-		Actions act=new Actions(driver);
-		act.moveToElement(MuoseHover).build().perform();
-		
-		WebElement trouble=driver.findElement(By.xpath("//div[@id='Support_sub']/table/tbody/tr/td//a[text()='Trouble Tickets']"));
-		if(trouble.isEnabled()) {
-			
-			trouble.click();
-		}
-		
-		WebDriverWait wait=new WebDriverWait(driver,10);
-		WebElement ele=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@title='HelpDesk']")));
-		
-		boolean status=ele.isDisplayed();
-		
-		if(status) {
-			
-			System.out.println("Element is Visiable");
-		}
-		else {
-			
-			System.out.println("Element is not visiable");
-		}
-		driver.findElement(By.xpath("//a[text()='Service Contracts']")).click();
-		
-		Thread.sleep(1000);
-		
-		driver.findElement(By.xpath("//img[@title='Create Service Contract...']")).click();
-		
-		Thread.sleep(1000);
-		
-		driver.findElement(By.xpath("//input[@id='subject']")).sendKeys(Subject);
-		
-		driver.findElement(By.xpath("//input[@value='  Save  '][1]")).click();
-		Thread.sleep(1000);
-	    
-	}
+
+@Then("User Is in Home pagE")
+public void user_Is_in_Home_pagE() {
+
+
+}
 
 }

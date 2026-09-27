@@ -25,7 +25,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class Analytics_TestScript {
+public class Analytics_TestScript extends Utility_Method {
 	
 	public static WebDriver driver;
 	public static Properties files;
@@ -42,7 +42,9 @@ public class Analytics_TestScript {
 		driver.manage().window().maximize();
 		driver.get(files.getProperty("Url"));
 		System.out.println("Browser Launch");
-		Thread.sleep(2000);;
+		Thread.sleep(2000);
+		captureScreenShot(driver);
+		
 	    
 	}
 
@@ -55,6 +57,7 @@ public class Analytics_TestScript {
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//input[@name='Login']")).click();
 		Thread.sleep(1000);
+		captureScreenShot(driver);
 	    
 	}
 

@@ -32,24 +32,21 @@ public class Vendor_TestScript {
 	FileInputStream fis=new FileInputStream("Config.properties");
     files=new Properties();
     files.load(fis);
-    System.setProperty("webdriver.chrome.driver", "Drivers\\chromedriver_138.exe");
+    System.setProperty("webdriver.chrome.driver", "Drivers\\chromedriver_153.exe");
     driver=new ChromeDriver();
     driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     driver.manage().window().maximize();
     driver.get(files.getProperty("Url"));
     System.out.println("Browser Launch");
     
-    File src=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-    FileUtils.copyFile(src, new File("./Screenshots/test.png"));
-    
 	    
 	}
 
-	@When("User login application with UserName{string} and Password {string} by click on Login Button")
-	public void user_login_application_with_UserName_and_Password_by_click_on_Login_Button(String Uname, String Pwd) {
+	@When("User login application with UserName by click on Login Button")
+	public void User_login_application_with_UserName_by_click_on_Login_Button() {
 		
-	driver.findElement(By.xpath("//input[@name='user_name']")).sendKeys(Uname);
-	driver.findElement(By.xpath("//input[@name='user_password']")).sendKeys(Pwd);
+	driver.findElement(By.xpath("//input[@name='user_name']")).sendKeys("admin");
+	driver.findElement(By.xpath("//input[@name='user_password']")).sendKeys("admin");
 	driver.findElement(By.xpath("//input[@name='Login']")).click();
 		
 	    
@@ -65,20 +62,24 @@ public class Vendor_TestScript {
 	@Then("User verify home Page Functinlity")
 	public void user_verify_home_Page_Functinlity() {
 		
-		String ActTitle=driver.getTitle();
-		String ExpTitle="admin - My Home Page - Home - vtiger CRM 5 - Commercial Open Source CRM";
-		Assert.assertEquals(ActTitle, ExpTitle);
+		String ActualTitle=driver.getTitle();
+		String ExpTitle="admin - My Home Page - Home - vtiger CRM 5 - Commercial Open Source CRM1";
+		Assert.assertEquals(ActualTitle, ExpTitle);
 		System.out.println("Title Verifyed");
 	    
 	}
 
 	@Then("User Able to click on Vendor Tab")
-	public void user_Able_to_click_on_Vendor_Tab() throws InterruptedException {
+	public void user_Able_to_click_on_Vendor_Tab() throws InterruptedException, IOException {
 		
-		WebElement Ven=driver.findElement(By.xpath("//a[text()='Inventory']"));
+		WebElement Inventory=driver.findElement(By.xpath("//a[text()='Inventory']"));
 		
-		Actions act=new Actions(driver);
-		act.moveToElement(Ven).build().perform();
+	    Actions act=new Actions(driver);
+	    act.moveToElement(Inventory).build().perform();
+	    
+	    File src=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+	    FileUtils.copyFile(src, new File("./Screenshots/Test.png"));
+		
 		
 		Thread.sleep(1000);
 		WebElement VendorLinks=driver.findElement(By.xpath("//div[@id='Inventory_sub']/table/tbody/tr[2]/td/a[text()='Vendors']"));
@@ -95,7 +96,7 @@ public class Vendor_TestScript {
 		
 		List<WebElement>AList=driver.findElements(By.xpath("//select[@id='bas_searchfield'][1]/option"));
 		
-		String[]str= {"Vendor No","Vendor Name"};
+		String[]str= {"Vendor No1","Vendor Name"};
 		
 		for(WebElement wb:AList) {
 			

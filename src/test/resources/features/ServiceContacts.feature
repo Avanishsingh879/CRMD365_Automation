@@ -1,17 +1,19 @@
-Feature: Validating the ServiceContact page Functionlity
+Feature: Validating the Services contacts Functionlity page
+
+@Regression    @Service_011      @Tc_001
+Scenario: Validating the Services contacts
+
+Given  uSER Navigate THE ApplicatioN UrL
+
+When   User Enter usernamE And password by click on sign buttoN
+
+Then   Login scuessFully
+
+And    User Is in Home pagE
 
 
+   
 
-@Regression @ServiceContact  @Tc_001
-Scenario Outline: Verify the ServiceContact Page
-
- Given User Navigate to Launch Application
- When  User enter "<Uname>" and "<Password>" by click on Login Page
- Then  User verify Login Page
- And   User verify the Home Page Functionlity
- And   User verify and create new ServiceContact"<Subject>" Page
  
- Examples:
+
  
- |Uname|Password|Subject|
- |admin|admin|Test|
